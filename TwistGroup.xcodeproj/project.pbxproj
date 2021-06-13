@@ -38,6 +38,7 @@
 		308A347426758E9600C2B6E9 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A347326758E9600C2B6E9 /* UIView + Extensions.swift */; };
 		308A34762675987F00C2B6E9 /* UserDefaults + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34752675987F00C2B6E9 /* UserDefaults + Extensions.swift */; };
 		308A347C26759E2200C2B6E9 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 308A347B26759E2200C2B6E9 /* SPIndicator */; };
+		308A347E2675CB2A00C2B6E9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A347D2675CB2A00C2B6E9 /* Error.swift */; };
 		309831B0267564D4004D34B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831AF267564D4004D34B1 /* AppDelegate.swift */; };
 		309831B2267564D4004D34B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831B1267564D4004D34B1 /* SceneDelegate.swift */; };
 		309831B7267564D4004D34B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309831B5267564D4004D34B1 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		308A347126758BD200C2B6E9 /* AnimeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailViewController.swift; sourceTree = "<group>"; };
 		308A347326758E9600C2B6E9 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		308A34752675987F00C2B6E9 /* UserDefaults + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extensions.swift"; sourceTree = "<group>"; };
+		308A347D2675CB2A00C2B6E9 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		309831AC267564D4004D34B1 /* TwistGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwistGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309831AF267564D4004D34B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		309831B1267564D4004D34B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				309831C326756511004D34B1 /* API.swift */,
 				308A343526756E3F00C2B6E9 /* Protocols.swift */,
 				309831C626756545004D34B1 /* Endpoints.swift */,
+				308A347D2675CB2A00C2B6E9 /* Error.swift */,
 			);
 			path = TwistCore;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308A347E2675CB2A00C2B6E9 /* Error.swift in Sources */,
 				308A346A2675844100C2B6E9 /* AnimeViewController.swift in Sources */,
 				309831B0267564D4004D34B1 /* AppDelegate.swift in Sources */,
 				308A344F2675795200C2B6E9 /* Crypto.swift in Sources */,

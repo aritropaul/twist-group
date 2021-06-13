@@ -127,5 +127,4 @@ extension AnimeDetailViewController: DetailsDelegate, SourcesDelegate {
         SPIndicator.present(title: "Error", preset: .error)
     }
     
-    
 }

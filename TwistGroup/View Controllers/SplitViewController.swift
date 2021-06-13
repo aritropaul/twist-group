@@ -14,8 +14,12 @@ class SplitViewController: UISplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        leftNavController = self.viewControllers.first as! UINavigationController
-        rightNavController = self.viewControllers[1] as! UINavigationController
+        
+        self.primaryBackgroundStyle = .sidebar
+        self.preferredPrimaryColumnWidthFraction = 0.3
+        
+        leftNavController = (self.viewControllers.first as! UINavigationController)
+        rightNavController = (self.viewControllers[1] as! UINavigationController)
         let sidebar = leftNavController.viewControllers.first as! SidebarViewController
         sidebar.delegate = self
         // Do any additional setup after loading the view.
@@ -25,7 +29,7 @@ class SplitViewController: UISplitViewController {
 
 extension SplitViewController: FilterDelegate {
     func didSelectFilter(filter: Filter) {
-        print(filter)
+//        print(filter)
         let animeVC = rightNavController.viewControllers.first as! AnimeViewController
         animeVC.updateAnime(filter: filter)
     }

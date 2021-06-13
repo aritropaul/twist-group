@@ -16,7 +16,7 @@ class TwistAPI {
     weak var sourcesDelegate: SourcesDelegate?
     
     //MARK: - Generic Request
-    func request<T:Codable>(base: String, endpoint: String, completion: @escaping(Result<T, Error>) -> ()) {
+    func request<T:Codable>(base: String, endpoint: String, completion: @escaping(Result<T, TwistError>) -> ()) {
         let url = URL(string: base + endpoint)!
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
@@ -27,8 +27,8 @@ class TwistAPI {
                 let decoded = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decoded))
             }
-            catch (let error) {
-                completion(.failure(error))
+            catch ( _) {
+                completion(.failure(.failedToDecode))
             }
         }
         task.resume()
@@ -40,7 +40,7 @@ class TwistAPI {
     func getAnime(filter: Filter) {
         let base = Twist.suzuha
         let endpoint = filter.rawValue
-        request(base: base, endpoint: endpoint) { (result: Result<[Anime],Error>) in
+        request(base: base, endpoint: endpoint) { (result: Result<[Anime], TwistError>) in
             switch(result) {
             case .success(let anime): self.animeListDelegate?.didGetAnime(anime: anime)
             case .failure(let error): self.animeListDelegate?.didFail(with: error)
@@ -51,7 +51,7 @@ class TwistAPI {
     func getAnimeDetails(slug: String) {
         let base = Twist.base
         let endpoint = Twist.anime + slug
-        request(base: base, endpoint: endpoint) { (result: Result<AnimeDetail, Error>) in
+        request(base: base, endpoint: endpoint) { (result: Result<AnimeDetail, TwistError>) in
             switch(result) {
             case .success(let anime): self.animeDetailDelegate?.didGetDetails(anime: anime)
             case .failure(let error): self.animeDetailDelegate?.didFail(with: error)
@@ -62,7 +62,7 @@ class TwistAPI {
     func getAnimeSources(slug: String) {
         let base = Twist.base
         let endpoint = Twist.anime + slug + Twist.sources
-        request(base: base, endpoint: endpoint) { (result: Result<[Source], Error>) in
+        request(base: base, endpoint: endpoint) { (result: Result<[Source], TwistError>) in
             switch(result) {
             case .success(let sources): self.sourcesDelegate?.didGetSources(sources: sources)
             case .failure(let error): self.sourcesDelegate?.didFail(with: error)
