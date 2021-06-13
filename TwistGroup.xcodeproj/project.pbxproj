@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018F310F26760581004BA862 /* WatchTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018F310E26760581004BA862 /* WatchTogether.swift */; };
 		300C96B32675D4E400ECEDA0 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 300C96B22675D4E400ECEDA0 /* Nuke */; };
 		308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A340726756AA000C2B6E9 /* AnimeDetail.swift */; };
 		308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343526756E3F00C2B6E9 /* Protocols.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		018F310E26760581004BA862 /* WatchTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTogether.swift; sourceTree = "<group>"; };
 		300C96B82675DB3000ECEDA0 /* TwistGroup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TwistGroup.entitlements; sourceTree = "<group>"; };
 		308A340726756AA000C2B6E9 /* AnimeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetail.swift; sourceTree = "<group>"; };
 		308A343526756E3F00C2B6E9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				300C96B82675DB3000ECEDA0 /* TwistGroup.entitlements */,
 				309831C526756526004D34B1 /* TwistCore */,
 				309831AF267564D4004D34B1 /* AppDelegate.swift */,
+				018F310E26760581004BA862 /* WatchTogether.swift */,
 				309831B1267564D4004D34B1 /* SceneDelegate.swift */,
 				309831B5267564D4004D34B1 /* Main.storyboard */,
 				308A347926759DF200C2B6E9 /* Utils */,
@@ -338,6 +341,7 @@
 				308A34762675987F00C2B6E9 /* UserDefaults + Extensions.swift in Sources */,
 				309831B2267564D4004D34B1 /* SceneDelegate.swift in Sources */,
 				308A34682675815800C2B6E9 /* SidebarViewController.swift in Sources */,
+				018F310F26760581004BA862 /* WatchTogether.swift in Sources */,
 				309831C726756545004D34B1 /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +492,7 @@
 				CODE_SIGN_ENTITLEMENTS = TwistGroup/TwistGroup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2J3WW2KWBU;
+				DEVELOPMENT_TEAM = 3374LUCZSY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TwistGroup/Info.plist;
 				INFOPLIST_KEY_CFBundleExecutable = TwistGroup;
@@ -524,7 +528,7 @@
 				CODE_SIGN_ENTITLEMENTS = TwistGroup/TwistGroup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2J3WW2KWBU;
+				DEVELOPMENT_TEAM = 3374LUCZSY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TwistGroup/Info.plist;
 				INFOPLIST_KEY_CFBundleExecutable = TwistGroup;
