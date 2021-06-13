@@ -55,8 +55,6 @@ class AnimeDetailViewController: UIViewController {
         playData[slug] = episode
         Defaults.shared.save()
         
-        
-        
         let headerFields: [String:String] = ["Referer":"https://twist.moe/a/\(slug)/\(episode)"]
         print("url: \(url)")
         let asset: AVURLAsset = AVURLAsset(url: url, options: ["AVURLAssetHTTPHeaderFieldsKey": headerFields])
@@ -102,6 +100,12 @@ extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         self.play(slug: slug, episode: episode, url: url)
         
     }
+    
+    #if targetEnvironment(macCatalyst)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    #endif
     
 }
 
