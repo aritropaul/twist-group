@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		018F310F26760581004BA862 /* WatchTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018F310E26760581004BA862 /* WatchTogether.swift */; };
-		018F311426763230004BA862 /* CoordinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018F311326763230004BA862 /* CoordinationManager.swift */; };
 		300C96B32675D4E400ECEDA0 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 300C96B22675D4E400ECEDA0 /* Nuke */; };
 		308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A340726756AA000C2B6E9 /* AnimeDetail.swift */; };
 		308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343526756E3F00C2B6E9 /* Protocols.swift */; };
@@ -52,8 +50,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		018F310E26760581004BA862 /* WatchTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTogether.swift; sourceTree = "<group>"; };
-		018F311326763230004BA862 /* CoordinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinationManager.swift; sourceTree = "<group>"; };
 		300C96B82675DB3000ECEDA0 /* TwistGroup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TwistGroup.entitlements; sourceTree = "<group>"; };
 		308A340726756AA000C2B6E9 /* AnimeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetail.swift; sourceTree = "<group>"; };
 		308A343526756E3F00C2B6E9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -110,15 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		018F311026760A11004BA862 /* Group Activity */ = {
-			isa = PBXGroup;
-			children = (
-				018F310E26760581004BA862 /* WatchTogether.swift */,
-				018F311326763230004BA862 /* CoordinationManager.swift */,
-			);
-			path = "Group Activity";
-			sourceTree = "<group>";
-		};
 		308A340926756C6300C2B6E9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +191,6 @@
 				300C96B82675DB3000ECEDA0 /* TwistGroup.entitlements */,
 				309831C526756526004D34B1 /* TwistCore */,
 				309831AF267564D4004D34B1 /* AppDelegate.swift */,
-				018F311026760A11004BA862 /* Group Activity */,
 				309831B1267564D4004D34B1 /* SceneDelegate.swift */,
 				309831B5267564D4004D34B1 /* Main.storyboard */,
 				308A347926759DF200C2B6E9 /* Utils */,
@@ -339,7 +325,6 @@
 			files = (
 				308A347E2675CB2A00C2B6E9 /* Error.swift in Sources */,
 				308A346A2675844100C2B6E9 /* AnimeViewController.swift in Sources */,
-				018F311426763230004BA862 /* CoordinationManager.swift in Sources */,
 				309831B0267564D4004D34B1 /* AppDelegate.swift in Sources */,
 				308A344F2675795200C2B6E9 /* Crypto.swift in Sources */,
 				308A347226758BD200C2B6E9 /* AnimeDetailViewController.swift in Sources */,
@@ -353,7 +338,6 @@
 				308A34762675987F00C2B6E9 /* UserDefaults + Extensions.swift in Sources */,
 				309831B2267564D4004D34B1 /* SceneDelegate.swift in Sources */,
 				308A34682675815800C2B6E9 /* SidebarViewController.swift in Sources */,
-				018F310F26760581004BA862 /* WatchTogether.swift in Sources */,
 				309831C726756545004D34B1 /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,9 +486,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TwistGroup/TwistGroup.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3374LUCZSY;
+				DEVELOPMENT_TEAM = 2J3WW2KWBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TwistGroup/Info.plist;
 				INFOPLIST_KEY_CFBundleExecutable = TwistGroup;
@@ -522,8 +508,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bothragarima.TwistGroup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aritropaul.TwistGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -538,9 +526,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TwistGroup/TwistGroup.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3374LUCZSY;
+				DEVELOPMENT_TEAM = 2J3WW2KWBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TwistGroup/Info.plist;
 				INFOPLIST_KEY_CFBundleExecutable = TwistGroup;
@@ -558,8 +548,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bothragarima.TwistGroup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aritropaul.TwistGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
