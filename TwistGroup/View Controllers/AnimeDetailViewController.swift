@@ -35,12 +35,17 @@ class AnimeDetailViewController: UIViewController {
         self.posterImage.layer.cornerRadius = 12
         self.posterImage.makeCard()
         self.titleLabel.text = anime.title
+        self.descriptionLabel.adjustsFontSizeToFitWidth = true
         TwistAPI.shared.animeDetailDelegate = self
         TwistAPI.shared.sourcesDelegate = self
         episodesTableView.delegate = self
         episodesTableView.dataSource = self
         loadData()
         
+        print(playData[anime.slug.slug])
+        #if targetEnvironment(macCatalyst)
+        playButton.setTitle("Watch", for: .normal)
+        #endif
     }
     
     func loadData() {
@@ -48,6 +53,12 @@ class AnimeDetailViewController: UIViewController {
         playButton.titleLabel?.text = "   Episode \(playData[anime.slug.slug] ?? 1)"
         TwistAPI.shared.getAnimeDetails(slug: anime.slug.slug)
         TwistAPI.shared.getAnimeSources(slug: anime.slug.slug)
+        
+        #if targetEnvironment(macCatalyst)
+        playButton.setTitle("Episode \(playData[anime.slug.slug] ?? 1)", for: .normal)
+//        playButton.titleLabel?.text = "Episode \(playData[anime.slug.slug] ?? 1)"
+        #endif
+        
     }
 
     func play(slug: String, episode: Int, url: URL) {
@@ -72,9 +83,9 @@ class AnimeDetailViewController: UIViewController {
     
     @IBAction func playTapped(_ sender: Any) {
         if sources.count > 0 {
-            Defaults.shared.load()
-            let lastEpisode = playData[details?.slug.slug ?? ""] ?? 1
-            let url = URL(string: sources[lastEpisode - 1].decodedSource())!
+            let lastEpisode = playData[anime.slug.slug] ?? 1
+            print(lastEpisode)
+            let url = URL(string: sources[sources.count - lastEpisode].decodedSource())!
             self.play(slug: details?.slug.slug ?? "", episode: lastEpisode, url: url)
         }
     }

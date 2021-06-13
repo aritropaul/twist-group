@@ -22,7 +22,13 @@ class SplitViewController: UISplitViewController {
         rightNavController = (self.viewControllers[1] as! UINavigationController)
         let sidebar = leftNavController.viewControllers.first as! SidebarViewController
         sidebar.delegate = self
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func shareplayTapped() {
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

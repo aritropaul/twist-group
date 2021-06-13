@@ -145,7 +145,7 @@
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-Ru-mdr">
                                 <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="87k-gm-ODs">
-                                    <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="systemUltraThinMaterial"/>
