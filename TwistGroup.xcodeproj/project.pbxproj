@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300C96B32675D4E400ECEDA0 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 300C96B22675D4E400ECEDA0 /* Nuke */; };
 		308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A340726756AA000C2B6E9 /* AnimeDetail.swift */; };
 		308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343526756E3F00C2B6E9 /* Protocols.swift */; };
 		308A344F2675795200C2B6E9 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343A2675795200C2B6E9 /* Crypto.swift */; };
@@ -33,7 +34,6 @@
 		308A34682675815800C2B6E9 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34672675815800C2B6E9 /* SidebarViewController.swift */; };
 		308A346A2675844100C2B6E9 /* AnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34692675844100C2B6E9 /* AnimeViewController.swift */; };
 		308A346C2675856000C2B6E9 /* AnimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A346B2675856000C2B6E9 /* AnimeCollectionViewCell.swift */; };
-		308A3470267587C400C2B6E9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 308A346F267587C400C2B6E9 /* Kingfisher */; };
 		308A347226758BD200C2B6E9 /* AnimeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A347126758BD200C2B6E9 /* AnimeDetailViewController.swift */; };
 		308A347426758E9600C2B6E9 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A347326758E9600C2B6E9 /* UIView + Extensions.swift */; };
 		308A34762675987F00C2B6E9 /* UserDefaults + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34752675987F00C2B6E9 /* UserDefaults + Extensions.swift */; };
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308A3470267587C400C2B6E9 /* Kingfisher in Frameworks */,
+				300C96B32675D4E400ECEDA0 /* Nuke in Frameworks */,
 				308A347C26759E2200C2B6E9 /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +240,8 @@
 			);
 			name = TwistGroup;
 			packageProductDependencies = (
-				308A346F267587C400C2B6E9 /* Kingfisher */,
 				308A347B26759E2200C2B6E9 /* SPIndicator */,
+				300C96B22675D4E400ECEDA0 /* Nuke */,
 			);
 			productName = TwistGroup;
 			productReference = 309831AC267564D4004D34B1 /* TwistGroup.app */;
@@ -272,8 +272,8 @@
 			);
 			mainGroup = 309831A3267564D4004D34B1;
 			packageReferences = (
-				308A346E267587C400C2B6E9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				308A347A26759E2200C2B6E9 /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				300C96B12675D4E400ECEDA0 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 309831AD267564D4004D34B1 /* Products */;
 			projectDirPath = "";
@@ -566,12 +566,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		308A346E267587C400C2B6E9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		300C96B12675D4E400ECEDA0 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 9.0.0;
 			};
 		};
 		308A347A26759E2200C2B6E9 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
@@ -585,10 +585,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		308A346F267587C400C2B6E9 /* Kingfisher */ = {
+		300C96B22675D4E400ECEDA0 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 308A346E267587C400C2B6E9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			package = 300C96B12675D4E400ECEDA0 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 		308A347B26759E2200C2B6E9 /* SPIndicator */ = {
 			isa = XCSwiftPackageProductDependency;

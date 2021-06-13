@@ -16,7 +16,7 @@ class TwistAPI {
     weak var sourcesDelegate: SourcesDelegate?
     
     //MARK: - Generic Request
-    func request<T:Codable>(base: String, endpoint: String, completion: @escaping(Result<T, TwistError>) -> ()) {
+    private func request<T:Codable>(base: String, endpoint: String, completion: @escaping(Result<T, TwistError>) -> ()) {
         let url = URL(string: base + endpoint)!
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
@@ -37,6 +37,19 @@ class TwistAPI {
     
     //MARK: - Requests
     
+    /// Gets the Anime with the given filter
+    ///
+    /// Main method to fetch lists of anime based to a precoded filter.
+    /// Custom filters can be coded in the `Endpoints.swift` file
+    ///
+    /// When called, gets an array of `anime` with the passed `filter`
+    ///
+    /// - Parameters:
+    ///   - filter: an option of `Filter`
+    ///
+    /// - Returns: A list of `Anime`
+    ///
+    /// - Throws: `TwistError.failedToDecode` if the JSONDecoder() fails.
     func getAnime(filter: Filter) {
         let base = Twist.suzuha
         let endpoint = filter.rawValue
@@ -48,6 +61,20 @@ class TwistAPI {
         }
     }
     
+    
+    /// Gets the details of the anime request
+    ///
+    /// Main method to fetch lists of anime based to a precoded filter.
+    /// Custom filters can be coded in the `Endpoints.swift` file
+    ///
+    /// When called, gets an array of `anime` with the passed `filter`
+    ///
+    /// - Parameters:
+    ///   - filter: an option of `Filter`
+    ///
+    /// - Returns: A list of `Anime`
+    ///
+    /// - Throws: `TwistError.failedToDecode` if the JSONDecoder() fails.
     func getAnimeDetails(slug: String) {
         let base = Twist.base
         let endpoint = Twist.anime + slug

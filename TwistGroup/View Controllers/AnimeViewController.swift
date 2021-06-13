@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import Kingfisher
 import SPIndicator
+import Nuke
 
 private let reuseIdentifier = "animeCell"
 
@@ -53,7 +53,8 @@ class AnimeViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AnimeCollectionViewCell
-        cell.posterImage.kf.setImage(with: URL(string: anime[indexPath.item].nejire_extension.poster_image))
+        let posterRequest = ImageRequest(url: URL(string: anime[indexPath.item].nejire_extension.poster_image)!)
+        Nuke.loadImage(with: posterRequest, into: cell.posterImage)
         cell.posterImage.layer.cornerRadius = 12
         return cell
     }

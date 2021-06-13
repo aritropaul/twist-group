@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import Kingfisher
 import AVKit
 import SPIndicator
+import Nuke
 
 class AnimeDetailViewController: UIViewController {
 
@@ -26,8 +26,11 @@ class AnimeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.posterImage.kf.setImage(with: URL(string: anime.nejire_extension.poster_image))
-        self.coverImage.kf.setImage(with: URL(string: anime.nejire_extension.cover_image))
+        
+        let posterRequest = ImageRequest(url: URL(string: anime.nejire_extension.poster_image)!)
+        let coverRequest = ImageRequest(url: URL(string: anime.nejire_extension.cover_image)!)
+        Nuke.loadImage(with: posterRequest, into: self.posterImage)
+        Nuke.loadImage(with: coverRequest, into: self.coverImage)
         self.coverImage.contentMode = .scaleAspectFill
         self.posterImage.layer.cornerRadius = 12
         self.posterImage.makeCard()
