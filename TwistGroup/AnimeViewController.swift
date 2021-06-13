@@ -17,6 +17,12 @@ class AnimeViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TwistAPI.shared.getAnime(filter: filter)
+        TwistAPI.shared.animeListDelegate = self
+    }
+
+
+    func updateAnime(filter: Filter) {
         switch filter {
         case .all:
             self.title = "All Anime"
@@ -27,12 +33,6 @@ class AnimeViewController: UICollectionViewController {
         case .rated:
             self.title = "Highly Rated Anime"
         }
-        TwistAPI.shared.getAnime(filter: filter)
-        TwistAPI.shared.animeListDelegate = self
-    }
-
-
-    func updateAnime(filter: Filter) {
         TwistAPI.shared.getAnime(filter: filter)
     }
 
