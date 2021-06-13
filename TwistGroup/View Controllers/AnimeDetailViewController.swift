@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import SPIndicator
 import Nuke
+import GroupActivities
 
 class AnimeDetailViewController: UIViewController {
 
@@ -41,7 +42,6 @@ class AnimeDetailViewController: UIViewController {
         episodesTableView.delegate = self
         episodesTableView.dataSource = self
         loadData()
-        
         print(playData[anime.slug.slug])
         #if targetEnvironment(macCatalyst)
         playButton.setTitle("Watch", for: .normal)
@@ -87,7 +87,21 @@ class AnimeDetailViewController: UIViewController {
             let lastEpisode = playData[anime.slug.slug] ?? 1
             print(lastEpisode)
             let url = URL(string: sources[sources.count - lastEpisode].decodedSource())!
-            self.play(slug: details?.slug.slug ?? "", episode: lastEpisode, url: url)
+            let activity = WatchTogether(source: url)
+            async {
+                switch await activity.prepareForActivation() {
+                case .activationDisabled:
+                    self.play(slug: details?.slug.slug ?? "", episode: lastEpisode, url: url)
+                    break
+                case .activationPreferred:
+                    activity.activate()
+                    break
+                case .cancelled:
+                    break
+                default: ()
+                }
+            }
+            
         }
     }
     
