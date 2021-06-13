@@ -9,6 +9,15 @@
           "revision": "44450a8f564d7c0165f736ba2250649ff8d3e556",
           "version": "6.3.0"
         }
+      },
+      {
+        "package": "SPIndicator",
+        "repositoryURL": "https://github.com/ivanvorobei/SPIndicator",
+        "state": {
+          "branch": null,
+          "revision": "df45cebb30b3d9cba1144998477e8ce5e8a89845",
+          "version": "1.1.6"
+        }
       }
     ]
   },

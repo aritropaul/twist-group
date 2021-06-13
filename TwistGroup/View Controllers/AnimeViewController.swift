@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SPIndicator
 
 private let reuseIdentifier = "animeCell"
 
@@ -76,12 +77,13 @@ extension AnimeViewController: ListDelegate {
         print(anime.count)
         self.anime = anime
         DispatchQueue.main.async {
+            SPIndicator.present(title: "Success", preset: .done)
             self.collectionView.reloadData()
         }
     }
     
     func didFail(with error: Error) {
-        print(error)
+        SPIndicator.present(title: "Error", preset: .error)
     }
     
     

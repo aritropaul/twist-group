@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import AVKit
+import SPIndicator
 
 class AnimeDetailViewController: UIViewController {
 
@@ -51,6 +52,8 @@ class AnimeDetailViewController: UIViewController {
         playData[slug] = episode
         Defaults.shared.save()
         
+        
+        
         let headerFields: [String:String] = ["Referer":"https://twist.moe/a/\(slug)/\(episode)"]
         print("url: \(url)")
         let asset: AVURLAsset = AVURLAsset(url: url, options: ["AVURLAssetHTTPHeaderFieldsKey": headerFields])
@@ -59,7 +62,11 @@ class AnimeDetailViewController: UIViewController {
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         playerViewController.player?.play()
-        self.present(playerViewController, animated: true)
+        self.present(playerViewController, animated: true) {
+            DispatchQueue.main.async {
+                SPIndicator.present(title: "Playing Episode \(episode)", preset: .custom(UIImage(systemName: "play.fill")!))
+            }
+        }
     }
     
     @IBAction func playTapped(_ sender: Any) {
@@ -106,7 +113,7 @@ extension AnimeDetailViewController: DetailsDelegate, SourcesDelegate {
     }
     
     func didGetSources(sources: [Source]) {
-        self.sources = sources
+        self.sources = sources.reversed()
         print(sources.count)
         DispatchQueue.main.async {
             if sources.count == 0 {
@@ -117,7 +124,7 @@ extension AnimeDetailViewController: DetailsDelegate, SourcesDelegate {
     }
     
     func didFail(with error: Error) {
-        print(error)
+        SPIndicator.present(title: "Error", preset: .error)
     }
     
     
