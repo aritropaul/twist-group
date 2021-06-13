@@ -74,6 +74,7 @@ class AnimeDetailViewController: UIViewController {
                     }.store(in: &subscriptions)
                     
                     session.join()
+                    listenForGroupSession()
                 }
             }
         }
