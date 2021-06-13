@@ -56,6 +56,7 @@ class AnimeDetailViewController: UIViewController {
         
         #if targetEnvironment(macCatalyst)
         playButton.setTitle("Episode \(playData[anime.slug.slug] ?? 1)", for: .normal)
+//        playButton.heightAnchor.constant = 50
 //        playButton.titleLabel?.text = "Episode \(playData[anime.slug.slug] ?? 1)"
         #endif
         
@@ -107,7 +108,7 @@ extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let episode = sources[indexPath.row].number
         let url = URL(string: sources[indexPath.row].decodedSource())!
-        let slug = (details?.slug.slug)!
+        let slug = (anime?.slug.slug)!
         self.play(slug: slug, episode: episode, url: url)
         
     }
@@ -142,7 +143,9 @@ extension AnimeDetailViewController: DetailsDelegate, SourcesDelegate {
     }
     
     func didFail(with error: Error) {
-        SPIndicator.present(title: "Error", preset: .error)
+        DispatchQueue.main.async {
+            SPIndicator.present(title: "Error", preset: .error)
+        }
     }
     
 }

@@ -84,7 +84,9 @@ extension AnimeViewController: ListDelegate {
     }
     
     func didFail(with error: Error) {
-        SPIndicator.present(title: "Error", preset: .error)
+        DispatchQueue.main.async {
+            SPIndicator.present(title: "Error", preset: .error)
+        }
     }
     
     
