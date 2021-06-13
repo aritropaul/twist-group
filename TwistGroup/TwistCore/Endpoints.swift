@@ -21,7 +21,7 @@ struct Twist {
 
 enum Filter: String {
     case all = "/anime"
-    case trending = "list/trending/anime?limit="
+    case trending = "list/trending/anime?limit=50"
     case airing = "list/anime?page[limit]=20&sort=-user_count&filter[status]=current&page[offset]="
     case rated = "list/anime?page[limit]=20&sort=-average_rating&page[offset]="
 }

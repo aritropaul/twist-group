@@ -14,6 +14,7 @@ class AnimeViewController: UICollectionViewController {
 
     var filter: Filter = .all
     var anime: [Anime] = []
+    var selectedAnime: Anime?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,17 @@ class AnimeViewController: UICollectionViewController {
         return cell
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedAnime = anime[indexPath.item]
+        self.performSegue(withIdentifier: "detail", sender: Any?.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? AnimeDetailViewController {
+            detailVC.anime = selectedAnime
+        }
+    }
+    
 }
 
 extension AnimeViewController: ListDelegate {
