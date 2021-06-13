@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		018F310F26760581004BA862 /* WatchTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018F310E26760581004BA862 /* WatchTogether.swift */; };
+		018F311426763230004BA862 /* CoordinationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018F311326763230004BA862 /* CoordinationManager.swift */; };
 		300C96B32675D4E400ECEDA0 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 300C96B22675D4E400ECEDA0 /* Nuke */; };
 		308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A340726756AA000C2B6E9 /* AnimeDetail.swift */; };
 		308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343526756E3F00C2B6E9 /* Protocols.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		018F310E26760581004BA862 /* WatchTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTogether.swift; sourceTree = "<group>"; };
+		018F311326763230004BA862 /* CoordinationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinationManager.swift; sourceTree = "<group>"; };
 		300C96B82675DB3000ECEDA0 /* TwistGroup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TwistGroup.entitlements; sourceTree = "<group>"; };
 		308A340726756AA000C2B6E9 /* AnimeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetail.swift; sourceTree = "<group>"; };
 		308A343526756E3F00C2B6E9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				018F310E26760581004BA862 /* WatchTogether.swift */,
+				018F311326763230004BA862 /* CoordinationManager.swift */,
 			);
 			path = "Group Activity";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				308A347E2675CB2A00C2B6E9 /* Error.swift in Sources */,
 				308A346A2675844100C2B6E9 /* AnimeViewController.swift in Sources */,
+				018F311426763230004BA862 /* CoordinationManager.swift in Sources */,
 				309831B0267564D4004D34B1 /* AppDelegate.swift in Sources */,
 				308A344F2675795200C2B6E9 /* Crypto.swift in Sources */,
 				308A347226758BD200C2B6E9 /* AnimeDetailViewController.swift in Sources */,
@@ -512,7 +516,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +552,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -10,12 +10,24 @@ import AVKit
 import SPIndicator
 import Nuke
 import GroupActivities
+import Combine
 
 class AnimeDetailViewController: UIViewController {
 
     var anime: Anime!
     var details: AnimeDetail!
     var sources: [Source] = []
+    var player: AVPlayer?
+    
+    var groupSession: GroupSession<WatchTogether>? {
+        didSet {
+            guard let groupSession = groupSession else {
+                return
+            }
+            player?.playbackCoordinator.coordinateWithSession(groupSession)
+        }
+    }
+    var subscriptions = Set<AnyCancellable>()
     
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var posterImage: UIImageView!
@@ -46,7 +58,25 @@ class AnimeDetailViewController: UIViewController {
         #if targetEnvironment(macCatalyst)
         playButton.setTitle("Watch", for: .normal)
         #endif
-    }
+                print("a")
+            async {
+                print("b")
+                for await session in WatchTogether.sessions() {
+                    print("c")
+                    self.groupSession = session
+                    subscriptions.removeAll()
+                    groupSession?.$state.sink { [weak self] state in
+                        if case .invalidated = state {
+                            self?.groupSession = nil
+                            self?.subscriptions.removeAll()
+                        }
+                        print(state)
+                    }.store(in: &subscriptions)
+                    
+                    session.join()
+                }
+            }
+        }
     
     func loadData() {
         Defaults.shared.load()
@@ -71,13 +101,23 @@ class AnimeDetailViewController: UIViewController {
         print("url: \(url)")
         let asset: AVURLAsset = AVURLAsset(url: url, options: ["AVURLAssetHTTPHeaderFieldsKey": headerFields])
         let playerItem = AVPlayerItem(asset: asset)
-        let player = AVPlayer(playerItem: playerItem)
+        player = AVPlayer(playerItem: playerItem)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         playerViewController.player?.play()
         self.present(playerViewController, animated: true) {
             DispatchQueue.main.async {
                 SPIndicator.present(title: "Playing Episode \(episode)", preset: .custom(UIImage(systemName: "play.fill")!))
+            }
+        }
+    }
+    
+    //MARK: - Added WatchTogether Activity for Group Activity
+    
+    func listenForGroupSession() {
+        async {
+            for await groupSession in WatchTogether.sessions() {
+                player?.playbackCoordinator.coordinateWithSession(groupSession)
             }
         }
     }
@@ -107,6 +147,7 @@ class AnimeDetailViewController: UIViewController {
     
 }
 
+//MARK: - TableView Functions
 extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
