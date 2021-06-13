@@ -36,6 +36,9 @@ class AnimeDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var episodesTableView: UITableView!
     
+    override func viewDidDisappear(_ animated: Bool) {
+        groupSession?.leave()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,9 +109,27 @@ class AnimeDetailViewController: UIViewController {
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         playerViewController.player?.play()
-        self.present(playerViewController, animated: true) {
-            DispatchQueue.main.async {
-                SPIndicator.present(title: "Playing Episode \(episode)", preset: .custom(UIImage(systemName: "play.fill")!))
+        let activity = WatchTogether(source: url)
+        async {
+            switch await activity.prepareForActivation() {
+            case .activationDisabled:
+                self.present(playerViewController, animated: true) {
+                    DispatchQueue.main.async {
+                        SPIndicator.present(title: "Playing Episode \(episode)", preset: .custom(UIImage(systemName: "play.fill")!))
+                    }
+                }
+                break
+            case .activationPreferred:
+                activity.activate()
+                self.present(playerViewController, animated: true) {
+                    DispatchQueue.main.async {
+                        SPIndicator.present(title: "Playing Episode \(episode)", preset: .custom(UIImage(systemName: "play.fill")!))
+                    }
+                }
+                break
+            case .cancelled:
+                break
+            default: ()
             }
         }
     }
@@ -128,21 +149,7 @@ class AnimeDetailViewController: UIViewController {
             let lastEpisode = playData[anime.slug.slug] ?? 1
             print(lastEpisode)
             let url = URL(string: sources[sources.count - lastEpisode].decodedSource())!
-            let activity = WatchTogether(source: url)
-            async {
-                switch await activity.prepareForActivation() {
-                case .activationDisabled:
                     self.play(slug: details?.slug.slug ?? "", episode: lastEpisode, url: url)
-                    break
-                case .activationPreferred:
-                    activity.activate()
-                    break
-                case .cancelled:
-                    break
-                default: ()
-                }
-            }
-            
         }
     }
     
