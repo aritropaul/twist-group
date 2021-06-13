@@ -9,12 +9,25 @@ import UIKit
 import AVKit
 import SPIndicator
 import Nuke
+import GroupActivities
+import Combine
 
 class AnimeDetailViewController: UIViewController {
 
     var anime: Anime!
     var details: AnimeDetail!
     var sources: [Source] = []
+    var player: AVPlayer?
+    
+    var groupSession: GroupSession<WatchTogether>? {
+        didSet {
+            guard let groupSession = groupSession else {
+                return
+            }
+            player?.playbackCoordinator.coordinateWithSession(groupSession)
+        }
+    }
+    var subscriptions = Set<AnyCancellable>()
     
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var posterImage: UIImageView!
@@ -41,12 +54,29 @@ class AnimeDetailViewController: UIViewController {
         episodesTableView.delegate = self
         episodesTableView.dataSource = self
         loadData()
-        
         print(playData[anime.slug.slug])
         #if targetEnvironment(macCatalyst)
         playButton.setTitle("Watch", for: .normal)
         #endif
-    }
+                print("a")
+            async {
+                print("b")
+                for await session in WatchTogether.sessions() {
+                    print("c")
+                    self.groupSession = session
+                    subscriptions.removeAll()
+                    groupSession?.$state.sink { [weak self] state in
+                        if case .invalidated = state {
+                            self?.groupSession = nil
+                            self?.subscriptions.removeAll()
+                        }
+                        print(state)
+                    }.store(in: &subscriptions)
+                    
+                    session.join()
+                }
+            }
+        }
     
     func loadData() {
         Defaults.shared.load()
@@ -71,7 +101,7 @@ class AnimeDetailViewController: UIViewController {
         print("url: \(url)")
         let asset: AVURLAsset = AVURLAsset(url: url, options: ["AVURLAssetHTTPHeaderFieldsKey": headerFields])
         let playerItem = AVPlayerItem(asset: asset)
-        let player = AVPlayer(playerItem: playerItem)
+        player = AVPlayer(playerItem: playerItem)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         playerViewController.player?.play()
@@ -82,17 +112,42 @@ class AnimeDetailViewController: UIViewController {
         }
     }
     
+    //MARK: - Added WatchTogether Activity for Group Activity
+    
+    func listenForGroupSession() {
+        async {
+            for await groupSession in WatchTogether.sessions() {
+                player?.playbackCoordinator.coordinateWithSession(groupSession)
+            }
+        }
+    }
+    
     @IBAction func playTapped(_ sender: Any) {
         if sources.count > 0 {
             let lastEpisode = playData[anime.slug.slug] ?? 1
             print(lastEpisode)
             let url = URL(string: sources[sources.count - lastEpisode].decodedSource())!
-            self.play(slug: details?.slug.slug ?? "", episode: lastEpisode, url: url)
+            let activity = WatchTogether(source: url)
+            async {
+                switch await activity.prepareForActivation() {
+                case .activationDisabled:
+                    self.play(slug: details?.slug.slug ?? "", episode: lastEpisode, url: url)
+                    break
+                case .activationPreferred:
+                    activity.activate()
+                    break
+                case .cancelled:
+                    break
+                default: ()
+                }
+            }
+            
         }
     }
     
 }
 
+//MARK: - TableView Functions
 extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
