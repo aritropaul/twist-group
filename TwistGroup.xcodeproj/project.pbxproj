@@ -7,15 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A340726756AA000C2B6E9 /* AnimeDetail.swift */; };
+		308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343526756E3F00C2B6E9 /* Protocols.swift */; };
+		308A344F2675795200C2B6E9 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A343A2675795200C2B6E9 /* Crypto.swift */; };
+		308A34502675795200C2B6E9 /* sha1.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A343C2675795200C2B6E9 /* sha1.js */; };
+		308A34512675795200C2B6E9 /* sha256.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A343D2675795200C2B6E9 /* sha256.js */; };
+		308A34522675795200C2B6E9 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A343E2675795200C2B6E9 /* aes.js */; };
+		308A34532675795200C2B6E9 /* sha384.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A343F2675795200C2B6E9 /* sha384.js */; };
+		308A34542675795200C2B6E9 /* tripledes.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34402675795200C2B6E9 /* tripledes.js */; };
+		308A34552675795200C2B6E9 /* pad-iso10126.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34412675795200C2B6E9 /* pad-iso10126.js */; };
+		308A34562675795200C2B6E9 /* mode-ecb.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34422675795200C2B6E9 /* mode-ecb.js */; };
+		308A34572675795200C2B6E9 /* pad-iso97971.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34432675795200C2B6E9 /* pad-iso97971.js */; };
+		308A34582675795200C2B6E9 /* sha512.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34442675795200C2B6E9 /* sha512.js */; };
+		308A34592675795200C2B6E9 /* mode-cfb.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34452675795200C2B6E9 /* mode-cfb.js */; };
+		308A345A2675795200C2B6E9 /* pad-zeropadding.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34462675795200C2B6E9 /* pad-zeropadding.js */; };
+		308A345B2675795200C2B6E9 /* mode-ofb.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34472675795200C2B6E9 /* mode-ofb.js */; };
+		308A345C2675795200C2B6E9 /* pad-ansix923.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34482675795200C2B6E9 /* pad-ansix923.js */; };
+		308A345D2675795200C2B6E9 /* md5.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A34492675795200C2B6E9 /* md5.js */; };
+		308A345E2675795200C2B6E9 /* pad-nopadding.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A344A2675795200C2B6E9 /* pad-nopadding.js */; };
+		308A345F2675795200C2B6E9 /* sha3.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A344B2675795200C2B6E9 /* sha3.js */; };
+		308A34602675795200C2B6E9 /* ripemd160.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A344C2675795200C2B6E9 /* ripemd160.js */; };
+		308A34612675795200C2B6E9 /* mode-ctr.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A344D2675795200C2B6E9 /* mode-ctr.js */; };
+		308A34622675795200C2B6E9 /* sha224.js in Resources */ = {isa = PBXBuildFile; fileRef = 308A344E2675795200C2B6E9 /* sha224.js */; };
+		308A34662675810B00C2B6E9 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34652675810B00C2B6E9 /* SplitViewController.swift */; };
+		308A34682675815800C2B6E9 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34672675815800C2B6E9 /* SidebarViewController.swift */; };
+		308A346A2675844100C2B6E9 /* AnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A34692675844100C2B6E9 /* AnimeViewController.swift */; };
+		308A346C2675856000C2B6E9 /* AnimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308A346B2675856000C2B6E9 /* AnimeCollectionViewCell.swift */; };
+		308A3470267587C400C2B6E9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 308A346F267587C400C2B6E9 /* Kingfisher */; };
 		309831B0267564D4004D34B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831AF267564D4004D34B1 /* AppDelegate.swift */; };
 		309831B2267564D4004D34B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831B1267564D4004D34B1 /* SceneDelegate.swift */; };
 		309831B4267564D4004D34B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831B3267564D4004D34B1 /* ViewController.swift */; };
 		309831B7267564D4004D34B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309831B5267564D4004D34B1 /* Main.storyboard */; };
 		309831B9267564D5004D34B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309831B8267564D5004D34B1 /* Assets.xcassets */; };
 		309831BC267564D5004D34B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309831BA267564D5004D34B1 /* LaunchScreen.storyboard */; };
+		309831C426756511004D34B1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831C326756511004D34B1 /* API.swift */; };
+		309831C726756545004D34B1 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831C626756545004D34B1 /* Endpoints.swift */; };
+		309831CA267566C7004D34B1 /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831C9267566C7004D34B1 /* Anime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		308A340726756AA000C2B6E9 /* AnimeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetail.swift; sourceTree = "<group>"; };
+		308A343526756E3F00C2B6E9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		308A343A2675795200C2B6E9 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		308A343C2675795200C2B6E9 /* sha1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha1.js; sourceTree = "<group>"; };
+		308A343D2675795200C2B6E9 /* sha256.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha256.js; sourceTree = "<group>"; };
+		308A343E2675795200C2B6E9 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
+		308A343F2675795200C2B6E9 /* sha384.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha384.js; sourceTree = "<group>"; };
+		308A34402675795200C2B6E9 /* tripledes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tripledes.js; sourceTree = "<group>"; };
+		308A34412675795200C2B6E9 /* pad-iso10126.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-iso10126.js"; sourceTree = "<group>"; };
+		308A34422675795200C2B6E9 /* mode-ecb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-ecb.js"; sourceTree = "<group>"; };
+		308A34432675795200C2B6E9 /* pad-iso97971.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-iso97971.js"; sourceTree = "<group>"; };
+		308A34442675795200C2B6E9 /* sha512.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha512.js; sourceTree = "<group>"; };
+		308A34452675795200C2B6E9 /* mode-cfb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-cfb.js"; sourceTree = "<group>"; };
+		308A34462675795200C2B6E9 /* pad-zeropadding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-zeropadding.js"; sourceTree = "<group>"; };
+		308A34472675795200C2B6E9 /* mode-ofb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-ofb.js"; sourceTree = "<group>"; };
+		308A34482675795200C2B6E9 /* pad-ansix923.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-ansix923.js"; sourceTree = "<group>"; };
+		308A34492675795200C2B6E9 /* md5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = md5.js; sourceTree = "<group>"; };
+		308A344A2675795200C2B6E9 /* pad-nopadding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "pad-nopadding.js"; sourceTree = "<group>"; };
+		308A344B2675795200C2B6E9 /* sha3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha3.js; sourceTree = "<group>"; };
+		308A344C2675795200C2B6E9 /* ripemd160.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ripemd160.js; sourceTree = "<group>"; };
+		308A344D2675795200C2B6E9 /* mode-ctr.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "mode-ctr.js"; sourceTree = "<group>"; };
+		308A344E2675795200C2B6E9 /* sha224.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sha224.js; sourceTree = "<group>"; };
+		308A34652675810B00C2B6E9 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		308A34672675815800C2B6E9 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
+		308A34692675844100C2B6E9 /* AnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeViewController.swift; sourceTree = "<group>"; };
+		308A346B2675856000C2B6E9 /* AnimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		309831AC267564D4004D34B1 /* TwistGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwistGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309831AF267564D4004D34B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		309831B1267564D4004D34B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +80,9 @@
 		309831B8267564D5004D34B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		309831BB267564D5004D34B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		309831BD267564D5004D34B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309831C326756511004D34B1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		309831C626756545004D34B1 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		309831C9267566C7004D34B1 /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +90,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308A3470267587C400C2B6E9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		308A340926756C6300C2B6E9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				308A343B2675795200C2B6E9 /* components */,
+				308A343A2675795200C2B6E9 /* Crypto.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		308A343B2675795200C2B6E9 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				308A343C2675795200C2B6E9 /* sha1.js */,
+				308A343D2675795200C2B6E9 /* sha256.js */,
+				308A343E2675795200C2B6E9 /* aes.js */,
+				308A343F2675795200C2B6E9 /* sha384.js */,
+				308A34402675795200C2B6E9 /* tripledes.js */,
+				308A34412675795200C2B6E9 /* pad-iso10126.js */,
+				308A34422675795200C2B6E9 /* mode-ecb.js */,
+				308A34432675795200C2B6E9 /* pad-iso97971.js */,
+				308A34442675795200C2B6E9 /* sha512.js */,
+				308A34452675795200C2B6E9 /* mode-cfb.js */,
+				308A34462675795200C2B6E9 /* pad-zeropadding.js */,
+				308A34472675795200C2B6E9 /* mode-ofb.js */,
+				308A34482675795200C2B6E9 /* pad-ansix923.js */,
+				308A34492675795200C2B6E9 /* md5.js */,
+				308A344A2675795200C2B6E9 /* pad-nopadding.js */,
+				308A344B2675795200C2B6E9 /* sha3.js */,
+				308A344C2675795200C2B6E9 /* ripemd160.js */,
+				308A344D2675795200C2B6E9 /* mode-ctr.js */,
+				308A344E2675795200C2B6E9 /* sha224.js */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		309831A3267564D4004D34B1 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +151,41 @@
 		309831AE267564D4004D34B1 /* TwistGroup */ = {
 			isa = PBXGroup;
 			children = (
+				309831C526756526004D34B1 /* TwistCore */,
 				309831AF267564D4004D34B1 /* AppDelegate.swift */,
 				309831B1267564D4004D34B1 /* SceneDelegate.swift */,
 				309831B3267564D4004D34B1 /* ViewController.swift */,
 				309831B5267564D4004D34B1 /* Main.storyboard */,
+				308A346B2675856000C2B6E9 /* AnimeCollectionViewCell.swift */,
+				308A34652675810B00C2B6E9 /* SplitViewController.swift */,
+				308A34692675844100C2B6E9 /* AnimeViewController.swift */,
+				308A34672675815800C2B6E9 /* SidebarViewController.swift */,
 				309831B8267564D5004D34B1 /* Assets.xcassets */,
 				309831BA267564D5004D34B1 /* LaunchScreen.storyboard */,
 				309831BD267564D5004D34B1 /* Info.plist */,
 			);
 			path = TwistGroup;
+			sourceTree = "<group>";
+		};
+		309831C526756526004D34B1 /* TwistCore */ = {
+			isa = PBXGroup;
+			children = (
+				308A340926756C6300C2B6E9 /* Utils */,
+				309831C8267566BE004D34B1 /* Models */,
+				309831C326756511004D34B1 /* API.swift */,
+				308A343526756E3F00C2B6E9 /* Protocols.swift */,
+				309831C626756545004D34B1 /* Endpoints.swift */,
+			);
+			path = TwistCore;
+			sourceTree = "<group>";
+		};
+		309831C8267566BE004D34B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				309831C9267566C7004D34B1 /* Anime.swift */,
+				308A340726756AA000C2B6E9 /* AnimeDetail.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +204,9 @@
 			dependencies = (
 			);
 			name = TwistGroup;
+			packageProductDependencies = (
+				308A346F267587C400C2B6E9 /* Kingfisher */,
+			);
 			productName = TwistGroup;
 			productReference = 309831AC267564D4004D34B1 /* TwistGroup.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 309831A3267564D4004D34B1;
+			packageReferences = (
+				308A346E267587C400C2B6E9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 309831AD267564D4004D34B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +252,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308A345A2675795200C2B6E9 /* pad-zeropadding.js in Resources */,
+				308A34512675795200C2B6E9 /* sha256.js in Resources */,
+				308A34552675795200C2B6E9 /* pad-iso10126.js in Resources */,
+				308A34562675795200C2B6E9 /* mode-ecb.js in Resources */,
 				309831BC267564D5004D34B1 /* LaunchScreen.storyboard in Resources */,
+				308A34582675795200C2B6E9 /* sha512.js in Resources */,
+				308A34612675795200C2B6E9 /* mode-ctr.js in Resources */,
+				308A34532675795200C2B6E9 /* sha384.js in Resources */,
+				308A34622675795200C2B6E9 /* sha224.js in Resources */,
+				308A34542675795200C2B6E9 /* tripledes.js in Resources */,
+				308A34572675795200C2B6E9 /* pad-iso97971.js in Resources */,
+				308A345B2675795200C2B6E9 /* mode-ofb.js in Resources */,
+				308A345D2675795200C2B6E9 /* md5.js in Resources */,
+				308A34522675795200C2B6E9 /* aes.js in Resources */,
 				309831B9267564D5004D34B1 /* Assets.xcassets in Resources */,
 				309831B7267564D4004D34B1 /* Main.storyboard in Resources */,
+				308A345C2675795200C2B6E9 /* pad-ansix923.js in Resources */,
+				308A345E2675795200C2B6E9 /* pad-nopadding.js in Resources */,
+				308A345F2675795200C2B6E9 /* sha3.js in Resources */,
+				308A34592675795200C2B6E9 /* mode-cfb.js in Resources */,
+				308A34502675795200C2B6E9 /* sha1.js in Resources */,
+				308A34602675795200C2B6E9 /* ripemd160.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +284,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308A346A2675844100C2B6E9 /* AnimeViewController.swift in Sources */,
 				309831B4267564D4004D34B1 /* ViewController.swift in Sources */,
 				309831B0267564D4004D34B1 /* AppDelegate.swift in Sources */,
+				308A344F2675795200C2B6E9 /* Crypto.swift in Sources */,
+				308A346C2675856000C2B6E9 /* AnimeCollectionViewCell.swift in Sources */,
+				308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */,
+				308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */,
+				308A34662675810B00C2B6E9 /* SplitViewController.swift in Sources */,
+				309831CA267566C7004D34B1 /* Anime.swift in Sources */,
+				309831C426756511004D34B1 /* API.swift in Sources */,
 				309831B2267564D4004D34B1 /* SceneDelegate.swift in Sources */,
+				308A34682675815800C2B6E9 /* SidebarViewController.swift in Sources */,
+				309831C726756545004D34B1 /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,13 +445,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J3WW2KWBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TwistGroup/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = TwistGroup;
+				INFOPLIST_KEY_CFBundleName = TwistGroup;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +466,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -316,13 +477,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2J3WW2KWBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TwistGroup/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = TwistGroup;
+				INFOPLIST_KEY_CFBundleName = TwistGroup;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +498,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -358,6 +524,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		308A346E267587C400C2B6E9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		308A346F267587C400C2B6E9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 308A346E267587C400C2B6E9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 309831A4267564D4004D34B1 /* Project object */;
 }
