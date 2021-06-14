@@ -47,6 +47,13 @@
 		309831C426756511004D34B1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831C326756511004D34B1 /* API.swift */; };
 		309831C726756545004D34B1 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831C626756545004D34B1 /* Endpoints.swift */; };
 		309831CA267566C7004D34B1 /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309831C9267566C7004D34B1 /* Anime.swift */; };
+		30D3B14F2676B94500EC7608 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3B14E2676B94500EC7608 /* Logger.swift */; };
+		30D3B1512676C6D700EC7608 /* AnimeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3B1502676C6D700EC7608 /* AnimeDetailTableViewController.swift */; };
+		30D3B1532676C84F00EC7608 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3B1522676C84F00EC7608 /* EpisodeCollectionViewCell.swift */; };
+		30D3B1552676CDB800EC7608 /* Jikan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3B1542676CDB800EC7608 /* Jikan.swift */; };
+		30D3B1572676D48100EC7608 /* JikanEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3B1562676D48100EC7608 /* JikanEpisode.swift */; };
+		30D3B15B2676FD9500EC7608 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 30D3B15A2676FD9500EC7608 /* SwiftSoup */; };
+		30D3B15F2677073600EC7608 /* JikanAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D3B15E2677073600EC7608 /* JikanAnime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +98,12 @@
 		309831C326756511004D34B1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		309831C626756545004D34B1 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		309831C9267566C7004D34B1 /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
+		30D3B14E2676B94500EC7608 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		30D3B1502676C6D700EC7608 /* AnimeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailTableViewController.swift; sourceTree = "<group>"; };
+		30D3B1522676C84F00EC7608 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeCollectionViewCell.swift; path = TwistGroup/Views/EpisodeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		30D3B1542676CDB800EC7608 /* Jikan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jikan.swift; sourceTree = "<group>"; };
+		30D3B1562676D48100EC7608 /* JikanEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanEpisode.swift; sourceTree = "<group>"; };
+		30D3B15E2677073600EC7608 /* JikanAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanAnime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +113,7 @@
 			files = (
 				300C96B32675D4E400ECEDA0 /* Nuke in Frameworks */,
 				308A347C26759E2200C2B6E9 /* SPIndicator in Frameworks */,
+				30D3B15B2676FD9500EC7608 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +158,8 @@
 		308A347726759DDE00C2B6E9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				308A347126758BD200C2B6E9 /* AnimeDetailViewController.swift */,
+				30D3B16026770A9900EC7608 /* Old */,
+				30D3B1502676C6D700EC7608 /* AnimeDetailTableViewController.swift */,
 				308A34652675810B00C2B6E9 /* SplitViewController.swift */,
 				308A34692675844100C2B6E9 /* AnimeViewController.swift */,
 				308A34672675815800C2B6E9 /* SidebarViewController.swift */,
@@ -155,6 +170,7 @@
 		308A347826759DEA00C2B6E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30D3B1522676C84F00EC7608 /* EpisodeCollectionViewCell.swift */,
 				308A346B2675856000C2B6E9 /* AnimeCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -172,6 +188,7 @@
 		309831A3267564D4004D34B1 = {
 			isa = PBXGroup;
 			children = (
+				309831C526756526004D34B1 /* TwistCore */,
 				309831AE267564D4004D34B1 /* TwistGroup */,
 				309831AD267564D4004D34B1 /* Products */,
 			);
@@ -189,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				300C96B82675DB3000ECEDA0 /* TwistGroup.entitlements */,
-				309831C526756526004D34B1 /* TwistCore */,
 				309831AF267564D4004D34B1 /* AppDelegate.swift */,
 				309831B1267564D4004D34B1 /* SceneDelegate.swift */,
 				309831B5267564D4004D34B1 /* Main.storyboard */,
@@ -209,9 +225,11 @@
 				308A340926756C6300C2B6E9 /* Utils */,
 				309831C8267566BE004D34B1 /* Models */,
 				309831C326756511004D34B1 /* API.swift */,
+				30D3B1542676CDB800EC7608 /* Jikan.swift */,
 				308A343526756E3F00C2B6E9 /* Protocols.swift */,
 				309831C626756545004D34B1 /* Endpoints.swift */,
 				308A347D2675CB2A00C2B6E9 /* Error.swift */,
+				30D3B14E2676B94500EC7608 /* Logger.swift */,
 			);
 			path = TwistCore;
 			sourceTree = "<group>";
@@ -221,8 +239,18 @@
 			children = (
 				309831C9267566C7004D34B1 /* Anime.swift */,
 				308A340726756AA000C2B6E9 /* AnimeDetail.swift */,
+				30D3B1562676D48100EC7608 /* JikanEpisode.swift */,
+				30D3B15E2677073600EC7608 /* JikanAnime.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		30D3B16026770A9900EC7608 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				308A347126758BD200C2B6E9 /* AnimeDetailViewController.swift */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +272,7 @@
 			packageProductDependencies = (
 				308A347B26759E2200C2B6E9 /* SPIndicator */,
 				300C96B22675D4E400ECEDA0 /* Nuke */,
+				30D3B15A2676FD9500EC7608 /* SwiftSoup */,
 			);
 			productName = TwistGroup;
 			productReference = 309831AC267564D4004D34B1 /* TwistGroup.app */;
@@ -276,6 +305,7 @@
 			packageReferences = (
 				308A347A26759E2200C2B6E9 /* XCRemoteSwiftPackageReference "SPIndicator" */,
 				300C96B12675D4E400ECEDA0 /* XCRemoteSwiftPackageReference "Nuke" */,
+				30D3B1592676FD9500EC7608 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 309831AD267564D4004D34B1 /* Products */;
 			projectDirPath = "";
@@ -331,14 +361,20 @@
 				308A346C2675856000C2B6E9 /* AnimeCollectionViewCell.swift in Sources */,
 				308A343626756E3F00C2B6E9 /* Protocols.swift in Sources */,
 				308A340826756AA000C2B6E9 /* AnimeDetail.swift in Sources */,
+				30D3B14F2676B94500EC7608 /* Logger.swift in Sources */,
 				308A34662675810B00C2B6E9 /* SplitViewController.swift in Sources */,
+				30D3B15F2677073600EC7608 /* JikanAnime.swift in Sources */,
 				309831CA267566C7004D34B1 /* Anime.swift in Sources */,
 				308A347426758E9600C2B6E9 /* UIView + Extensions.swift in Sources */,
 				309831C426756511004D34B1 /* API.swift in Sources */,
+				30D3B1512676C6D700EC7608 /* AnimeDetailTableViewController.swift in Sources */,
+				30D3B1572676D48100EC7608 /* JikanEpisode.swift in Sources */,
 				308A34762675987F00C2B6E9 /* UserDefaults + Extensions.swift in Sources */,
+				30D3B1552676CDB800EC7608 /* Jikan.swift in Sources */,
 				309831B2267564D4004D34B1 /* SceneDelegate.swift in Sources */,
 				308A34682675815800C2B6E9 /* SidebarViewController.swift in Sources */,
 				309831C726756545004D34B1 /* Endpoints.swift in Sources */,
+				30D3B1532676C84F00EC7608 /* EpisodeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +552,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "2,6";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -556,7 +592,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "2,6";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -600,6 +636,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		30D3B1592676FD9500EC7608 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -612,6 +656,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 308A347A26759E2200C2B6E9 /* XCRemoteSwiftPackageReference "SPIndicator" */;
 			productName = SPIndicator;
+		};
+		30D3B15A2676FD9500EC7608 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30D3B1592676FD9500EC7608 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

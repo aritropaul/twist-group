@@ -9,8 +9,6 @@ import UIKit
 import AVKit
 import SPIndicator
 import Nuke
-import GroupActivities
-import Combine
 
 class AnimeDetailViewController: UIViewController {
 
@@ -24,10 +22,32 @@ class AnimeDetailViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var episodesTableView: UITableView!
+    @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = anime.title
+        self.descriptionLabel.adjustsFontSizeToFitWidth = true
+        TwistAPI.shared.animeDetailDelegate = self
+        TwistAPI.shared.sourcesDelegate = self
+        episodesTableView.delegate = self
+        episodesTableView.dataSource = self
+        
+        let malID = String(describing: anime.mal_id)
+        logger.log("📺 Anime: \(self.anime.slug.slug)")
+        logger.log("🗳 MAL Id: \(malID)")
+        
+        loadData()
+        
+//        #if targetEnvironment(macCatalyst)
+//        playButton.set
+//        #endif
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
         let posterRequest = ImageRequest(url: URL(string: anime.nejire_extension.poster_image)!)
         let coverRequest = ImageRequest(url: URL(string: anime.nejire_extension.cover_image)!)
         Nuke.loadImage(with: posterRequest, into: self.posterImage)
@@ -35,18 +55,6 @@ class AnimeDetailViewController: UIViewController {
         self.coverImage.contentMode = .scaleAspectFill
         self.posterImage.layer.cornerRadius = 12
         self.posterImage.makeCard()
-        self.titleLabel.text = anime.title
-        self.descriptionLabel.adjustsFontSizeToFitWidth = true
-        TwistAPI.shared.animeDetailDelegate = self
-        TwistAPI.shared.sourcesDelegate = self
-        episodesTableView.delegate = self
-        episodesTableView.dataSource = self
-        loadData()
-        print(playData[anime.slug.slug])
-        #if targetEnvironment(macCatalyst)
-        playButton.setTitle("Watch", for: .normal)
-        #endif
-        print("a")
     }
     
     func loadData() {
@@ -54,6 +62,8 @@ class AnimeDetailViewController: UIViewController {
         playButton.titleLabel?.text = "   Episode \(playData[anime.slug.slug] ?? 1)"
         TwistAPI.shared.getAnimeDetails(slug: anime.slug.slug)
         TwistAPI.shared.getAnimeSources(slug: anime.slug.slug)
+        
+        
         
         #if targetEnvironment(macCatalyst)
         playButton.setTitle("Episode \(playData[anime.slug.slug] ?? 1)", for: .normal)
@@ -150,3 +160,5 @@ extension AnimeDetailViewController: DetailsDelegate, SourcesDelegate {
     }
     
 }
+
+

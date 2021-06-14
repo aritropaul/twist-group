@@ -16,13 +16,30 @@ class AnimeViewController: UICollectionViewController {
     var filter: Filter = .all
     var anime: [Anime] = []
     var selectedAnime: Anime?
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TwistAPI.shared.getAnime(filter: filter)
         TwistAPI.shared.animeListDelegate = self
+        updateAnime(filter: .all)
     }
 
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        
+        switch segmentControl.selectedSegmentIndex {
+        case 0: updateAnime(filter: .all)
+        case 1: updateAnime(filter: .airing)
+        case 2: updateAnime(filter: .trending)
+        case 3: updateAnime(filter: .rated)
+            
+        default:
+            break
+        }
+        
+    }
+    
+    
 
     func updateAnime(filter: Filter) {
         switch filter {
@@ -65,7 +82,7 @@ class AnimeViewController: UICollectionViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailVC = segue.destination as? AnimeDetailViewController {
+        if let detailVC = segue.destination as? AnimeDetailTableViewController {
             detailVC.anime = selectedAnime
         }
     }
@@ -78,14 +95,14 @@ extension AnimeViewController: ListDelegate {
         print(anime.count)
         self.anime = anime
         DispatchQueue.main.async {
-            SPIndicator.present(title: "Success", preset: .done)
+            SPIndicator.present(title: "Success", preset: .done, from: .bottom)
             self.collectionView.reloadData()
         }
     }
     
     func didFail(with error: Error) {
         DispatchQueue.main.async {
-            SPIndicator.present(title: "Error", preset: .error)
+            SPIndicator.present(title: "Error", preset: .error, from: .bottom)
         }
     }
     

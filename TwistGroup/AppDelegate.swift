@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Defaults.shared.load()
+        let diskCacheSize = 500*1024*1024 // 500MB
+        URLCache.configSharedCache(disk: diskCacheSize)
         return true
     }
 
@@ -30,6 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+}
 
+extension URLCache {
+    static func configSharedCache(directory: String? = Bundle.main.bundleIdentifier, memory: Int = 0, disk: Int = 0) {
+        URLCache.shared = {
+            let cacheDirectory = (NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String).appendingFormat("/\(directory ?? "cache")/" )
+            return URLCache(memoryCapacity: memory, diskCapacity: disk, diskPath: cacheDirectory)
+        }()
+    }
 }
 

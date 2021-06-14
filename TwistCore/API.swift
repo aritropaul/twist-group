@@ -21,14 +21,16 @@ class TwistAPI {
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
-            print(url)
-            print(String(data: data, encoding: .utf8))
+            logger.log("🔌 URL: \(url)")
             do {
                 let decoded = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decoded))
+                logger.log("✅ Decode Success")
             }
             catch ( _) {
                 completion(.failure(.failedToDecode))
+                logger.log("⬇️ Data: \(String(data:data, encoding: .utf8)!)")
+                logger.log("❌ Decode Failed")
             }
         }
         task.resume()
